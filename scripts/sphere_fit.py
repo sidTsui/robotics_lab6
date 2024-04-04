@@ -20,7 +20,7 @@ filter_gains = {'xc': 0.1, 'yc': 0.1, 'zc': 0.1, 'radius': 0.1}
 matrix_a = []
 matrix_b = []
 output = True
-xOutput, yOutput, zOutput, rOutput = 0.0, 0.0, 0.0, 0.0
+xOutput, yOutput, zOutput, rOutput = 0.0, 0.0, 0.0,0 0.0
 valParams = False
 
 ###builds matrices from receiving the data points
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 	rospy.init_node('sphere_fit', anonymous = True)
 	#init all variables
 	output = True 
-	xOutput, yOutput, zOutput, rOutput = 0.0, 0.0, 0.0, 0.0 
+	xOutput, yOutput, zOutput, rOutput = -0.14, -0.2, 0.5, 0.05
 	valParams = False
 	# define subscriber and publisher
 	# subscribe to /xyz_croppedtopic
