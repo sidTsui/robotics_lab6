@@ -20,7 +20,7 @@ filter_gains = {'xc': 0.1, 'yc': 0.1, 'zc': 0.1, 'radius': 0.1}
 matrix_a = []
 matrix_b = []
 output = True
-xOutput, yOutput, zOutput, rOutput = 0.0, 0.0, 0.0,0 0.0
+xOutput, yOutput, zOutput, rOutput = 0.0, 0.0, 0.0, 0.0
 valParams = False
 
 ###builds matrices from receiving the data points
