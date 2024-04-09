@@ -16,7 +16,7 @@ import math
 from robot_vision_lectures.msg import XYZarray, SphereParams
 
 
-filter_gains = {'xc': 0.1, 'yc': 0.1, 'zc': 0.1, 'radius': 0.1}
+filter_gain = {'xc': 0.1, 'yc': 0.1, 'zc': 0.1, 'radius': 0.1}
 matrix_a = []
 matrix_b = []
 output = True
@@ -75,6 +75,15 @@ def filtered(unfiltered, filter_gain, output, xOutput, yOutput, zOutput, rOutput
 	zInput = unfiltered.zc
 	rInput = unfiltered.radius
 	###from Input
+
+	return filParams
+	
+if __name__ == '__main__':
+	#init ros node
+	rospy.init_node('sphere_fit', anonymous = True)
+	#init all variables
+	output = True 
+	xOutput, yOutput, zOutput, rOutput = -0.14, -0.2, 0.5, 0.05	
 	filParams.xc = xOutput
 	filParams.yc = yOutput
 	filParams.zc = zOutput
@@ -84,14 +93,6 @@ def filtered(unfiltered, filter_gain, output, xOutput, yOutput, zOutput, rOutput
 	zOutput = filter_gain * zInput + (1 - filter_gain) * zOutput
 	rOutput = filter_gain * rInput + (1 - filter_gain) * rOutput
 	
-	return filParams
-	
-if __name__ == '__main__':
-	#init ros node
-	rospy.init_node('sphere_fit', anonymous = True)
-	#init all variables
-	output = True 
-	xOutput, yOutput, zOutput, rOutput = -0.14, -0.2, 0.5, 0.05
 	valParams = False
 	# define subscriber and publisher
 	# subscribe to /xyz_croppedtopic
